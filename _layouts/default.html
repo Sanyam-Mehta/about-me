@@ -6,15 +6,15 @@
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr style="padding:0px">
-                <td style="padding:2.5%;width:63%;vertical-align:middle">
-                  <h1>Sanyam Mehta</h1>
-                  <p>
+                <td style="padding:2.5%;width:63%;vertical-align:middle; font-family: 'Lato', sans-serif;">
+                  <h1 style="font-family: 'Georgia', serif; font-weight: bold; margin-bottom: 10px; color: #2c3e50;">Sanyam Mehta</h1>
+                  <p style="font-size: 1.1em; color: #34495e;">
                     Hi, I'm Sanyam! I'm a graduate student in the <a href="https://robotics.umich.edu/">Robotics program</a> at the <a href="https://umich.edu/">University of Michigan</a>, diving deep into the worlds of computer vision, generative AI, and robotic perception. My goal is to build intelligent systems that can see, understand, and interact with the world in meaningful ways.
                   </p>
-                  <p>
-                    Before coming to Michigan, I was a Computer Vision & ML Engineer at <a href="https://www.gather.ai/">Gather AI</a>, a CMU spin-off, where I got to apply these ideas to solve real-world automation challenges in massive warehouses. I'm driven by the potential for robotics to make people's lives safer and to help us protect our planet.
+                  <p style="font-size: 1.1em; color: #34495e;">
+                    Before coming to Michigan, I was a Computer Vision & ML Engineer at <a href="https://www.gather.ai/">Gather AI</a>, a CMU spin-off, where I got to apply these ideas to solve real-world automation challenges in massive warehouses.
                   </p>
-                  <p style="text-align:center">
+                  <p style="text-align:center; margin-top: 20px;">
                     <a href="mailto:sanyam@umich.edu">Email</a> &nbsp;/&nbsp;
                     <a href="https://github.com/yourgithub">GitHub</a> &nbsp;/&nbsp;
                     <a href="https://scholar.google.com/citations?user=yourid">Google Scholar</a> &nbsp;/&nbsp;
@@ -22,80 +22,85 @@
                   </p>
                 </td>
                 <td style="padding:2.5%;width:37%;max-width:37%">
-                  <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 5px;" alt="profile photo" src="images/profile-pic-moro-rock.jpg">
+                  <img style="width:100%;max-width:100%;object-fit: cover; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1);" alt="profile photo" src="images/profile-pic-moro-rock.jpg">
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+          <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));">
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
-                <td style="padding:2.5%;width:100%;vertical-align:middle">
-                  <h2>Research</h2>
-                  <p>
+                <td style="padding:2.5%;width:100%;vertical-align:middle; font-family: 'Lato', sans-serif;">
+                  <h2 style="font-family: 'Georgia', serif; color: #2c3e50; border-bottom: 2px solid #bdc3c7; padding-bottom: 5px;">🔬 Research</h2>
+                  <p style="font-size: 1.1em; color: #34495e;">
                     My current research with <a href="https://www.andrewowens.com/">Dr. Andrew Owens</a> explores the surprising, emergent capabilities of large generative models.
                   </p>
 
-                  <h3 style="margin-bottom: 5px;">Tracking Emerges in Video Diffusion Models</h3>
-                  <p style="margin-top: 0px;"><em>(Submitted to NeurIPS 2025)</em></p>
-                  <p>
-                    What if a model designed to <em>create</em> videos could also be used to <em>understand</em> them? [cite_start]We discovered that powerful, off-the-shelf video diffusion models have a hidden talent for tracking objects without any specialized training[cite: 19]. [cite_start]Our method is pretty straightforward: we place a colored dot on an object in the first frame of a video and prompt the model to regenerate the video, making sure the dot sticks to the object[cite: 20]. [cite_start]The trick is a new guidance technique we developed called <strong>"Marker Enhancement Guidance"</strong> that encourages the model to keep the marker consistent across all the frames[cite: 21, 280]. [cite_start]This <strong>zero-shot</strong> approach works surprisingly well, outperforming many previous zero-shot methods and proving competitive with specialized self-supervised models[cite: 23].
-                  </p>
+                  <div style="background-color: #f8f9fa; border-left: 4px solid #3498db; padding: 20px; margin: 25px 0; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                    <h3 style="margin-top: 0; margin-bottom: 5px; font-family: 'Georgia', serif; color: #2980b9;">Tracking Emerges in Video Diffusion Models</h3>
+                    <p style="margin-top: 0px; font-style: italic; color: #7f8c8d;">(Submitted to NeurIPS 2025)</p>
+                    <p style="color: #34495e; line-height: 1.6;">
+                      What if a model designed to <em>create</em> videos could also be used to <em>understand</em> them? We discovered that powerful, off-the-shelf video diffusion models have a hidden talent for tracking objects without any specialized training. Our method is pretty straightforward: we place a colored dot on an object in the first frame and prompt the model to regenerate the video, making sure the dot sticks to the object. The trick is a new guidance technique we developed called <strong>"Marker Enhancement Guidance"</strong> that encourages the model to keep the marker consistent across all frames. This <strong>zero-shot</strong> approach works surprisingly well, outperforming many previous zero-shot methods and proving competitive with specialized self-supervised models.
+                    </p>
+                  </div>
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+          <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));">
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
-                <td style="padding:2.5%;width:100%;vertical-align:middle">
-                  <h2>Experience</h2>
+                <td style="padding:2.5%;width:100%;vertical-align:middle; font-family: 'Lato', sans-serif;">
+                  <h2 style="font-family: 'Georgia', serif; color: #2c3e50; border-bottom: 2px solid #bdc3c7; padding-bottom: 5px;">💼 Experience</h2>
 
-                  <h3 style="margin-bottom: 5px;">Computer Vision & ML Engineer @ Gather AI (2021-2024)</h3>
-                  <p>
+                  <h3 style="margin-bottom: 10px; color: #2c3e50;">Computer Vision & ML Engineer @ Gather AI (2021-2024)</h3>
+                  <p style="color: #34495e;">
                     For three years, I worked at a fast-paced startup focused on autonomous drone-based inventory management. It was an amazing experience working under the mentorship of the founders, Dr. Daniel Maturana and Dr. Sankalp Arora. I got to:
                   </p>
-                  <ul>
-                    <li>Develop a neural network for 3D occupancy inference from 2D images, helping classify over 1.2 million pallet locations with high accuracy.</li>
-                    <li>Analyze and compare monocular SLAM systems (like ORB-SLAM and Droid-SLAM) to improve our drone navigation in complex, dynamic warehouse environments.</li>
-                    <li>Engineer scalable data processing systems and lead cross-cultural data annotation efforts.</li>
+                  <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #34495e;">
+                    <li><span style="margin-right: 10px;">✅</span>Develop a neural network for 3D occupancy inference, helping classify over 1.2 million pallet locations with high accuracy.</li>
+                    <li><span style="margin-right: 10px;">✅</span>Analyze and compare monocular SLAM systems to improve drone navigation in complex, dynamic warehouses.</li>
+                    <li><span style="margin-right: 10px;">✅</span>Engineer scalable data processing systems and lead cross-cultural data annotation efforts.</li>
                   </ul>
 
-                  <h3 style="margin-bottom: 5px;">Graduate Student Instructor @ University of Michigan (2024-Present)</h3>
-                  <p>
-                    I've also discovered a love for teaching as a Graduate Student Instructor (GSI) for <strong>ROB 550: Robotics Systems Laboratory</strong>. It's incredibly rewarding to:
+                  <h3 style="margin-top: 30px; margin-bottom: 10px; color: #2c3e50;">Graduate Student Instructor @ University of Michigan (2024-Present)</h3>
+                  <p style="color: #34495e;">
+                    I've also discovered a love for teaching as a Graduate Student Instructor (GSI) for <strong>ROB 500: Robotics Systems Laboratory</strong>. It's incredibly rewarding to:
                   </p>
-                  <ul>
-                    <li>Lead lab sessions and help students tackle hands-on projects, from programming a robotic arm to implementing a particle filter SLAM on a mobile robot.</li>
-                    <li>Mentor students and share the passion for robotics that my own mentors instilled in me.</li>
+                  <ul style="list-style: none; padding-left: 0; line-height: 1.8; color: #34495e;">
+                    <li><span style="margin-right: 10px;">🎓</span>Lead lab sessions and help students tackle hands-on projects, from programming a robotic arm to implementing a particle filter SLAM.</li>
+                    <li><span style="margin-right: 10px;">🎓</span>Mentor students and share the passion for robotics that my own mentors instilled in me.</li>
                   </ul>
                 </td>
               </tr>
             </tbody>
           </table>
 
-          <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));">
+          <hr style="border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0));">
 
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;">
             <tbody>
               <tr>
-                <td style="padding:2.5%;width:100%;vertical-align:middle">
-                  <h2>Why Robotics?</h2>
-                  <p>
-                    <strong>For People:</strong> My time at Gather AI opened my eyes to the real-world impact of robotics. I learned that in 2021, nearly 38% of accidental deaths in warehouses were due to slips, trips, and falls. Seeing our autonomous drones collect data from dangerous, hard-to-reach places—keeping people safely on the ground—showed me that robotics isn't just about efficiency; it's about protecting lives.
-                  </p>
-                  <p>
-                    <strong>For the Planet:</strong> I was heartbroken to learn about the devastation wildfires have caused in California, destroying 20% of the world's Giant Sequoias—trees that are thousands of years old. I imagine a future where advanced, accessible robots can assist rangers in protecting these natural wonders from fires and other threats. This is the kind of work I dream of contributing to.
-                  </p>
-                  <p>
+                <td style="padding:2.5%;width:100%;vertical-align:middle; font-family: 'Lato', sans-serif;">
+                  <h2 style="font-family: 'Georgia', serif; color: #2c3e50; border-bottom: 2px solid #bdc3c7; padding-bottom: 5px;">❤️ Why Robotics?</h2>
+                  
+                  <blockquote style="border-left: 3px solid #1abc9c; padding-left: 20px; margin: 25px 0; font-style: italic; color: #34495e; font-size: 1.1em;">
+                    <strong>For People:</strong> My time at Gather AI opened my eyes to the real-world impact of robotics. Seeing our autonomous drones collect data from dangerous, hard-to-reach places—keeping people safely on the ground—showed me that robotics isn't just about efficiency; it's about protecting lives.
+                  </blockquote>
+                  
+                  <blockquote style="border-left: 3px solid #e67e22; padding-left: 20px; margin: 25px 0; font-style: italic; color: #34495e; font-size: 1.1em;">
+                    <strong>For the Planet:</strong> I was heartbroken to learn about the devastation wildfires have caused in California, destroying 20% of the world's Giant Sequoias. I imagine a future where advanced robots can assist rangers in protecting these natural wonders. This is the kind of work I dream of contributing to.
+                  </blockquote>
+
+                  <blockquote style="border-left: 3px solid #9b59b6; padding-left: 20px; margin: 25px 0; font-style: italic; color: #34495e; font-size: 1.1em;">
                     <strong>For the Fun of It:</strong> And sometimes, the reason is simple: <strong>robots are just cool</strong>. I love the challenge of building things, and the idea of creating intelligent machines that can help people is what gets me excited to learn and create every single day.
-                  </p>
+                  </blockquote>
                 </td>
               </tr>
             </tbody>
