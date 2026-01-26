@@ -46,14 +46,14 @@
                       <a href="https://point-prompting.github.io/" style="text-decoration: none; color: #2980b9;">Point Prompting: Counterfactual Tracking with Video Diffusion Models</a>
                     </h3>
                     <p style="margin-top: 0px; margin-bottom: 10px; color: #34495e; font-size: 1.0em;">
-                      <strong>Sanyam Mehta*</strong>, Ayush Shrivastava*, Daniel Geng, Andrew Owens
+                      <strong>Sanyam Mehta*</strong>, Ayush Shrivastava, Daniel Geng, Andrew Owens
                     </p>
                     <p style="margin-top: 0px; margin-bottom: 10px; font-style: italic; color: #7f8c8d; font-size: 0.9em;">
                       *Equal Contribution
                     </p>
                     
                     <p style="color: #34495e; line-height: 1.6; font-size: 0.95em;">
-                      <strong>Abstract:</strong> Trackers and video generators solve closely related problems: the former analyze motion, while the latter synthesize it. [cite: 22, 27] We show that this connection enables pretrained video diffusion models to perform zero-shot point tracking by simply prompting them to visually mark points as they move over time. [cite: 24, 27] We place a distinctively colored marker at the query point, then regenerate the rest of the video from an intermediate noise level. [cite: 27] This propagates the marker across frames, tracing the point’s trajectory. [cite: 27] To ensure that the marker remains visible in this counterfactual generation, despite such markers being unlikely in natural videos, we use the unedited initial frame as a negative prompt. [cite: 26] Through experiments with multiple image-conditioned video diffusion models, we find that these “emergent” tracks outperform those of prior zero-shot methods and persist through occlusions, often obtaining performance that is competitive with specialized self-supervised models. [cite: 25, 27]
+                      <strong>Abstract:</strong> Trackers and video generators solve closely related problems: the former analyze motion, while the latter synthesize it. We show that this connection enables pretrained video diffusion models to perform zero-shot point tracking by simply prompting them to visually mark points as they move over time. We place a distinctively colored marker at the query point, then regenerate the rest of the video from an intermediate noise level. This propagates the marker across frames, tracing the point’s trajectory. To ensure that the marker remains visible in this counterfactual generation, despite such markers being unlikely in natural videos, we use the unedited initial frame as a negative prompt. Through experiments with multiple image-conditioned video diffusion models, we find that these “emergent” tracks outperform those of prior zero-shot methods and persist through occlusions, often obtaining performance that is competitive with specialized self-supervised models.
                       <br><br>
                       <a href="https://point-prompting.github.io/" style="color: #3498db; font-weight: bold;">[Project Page]</a> &nbsp;
                       <a href="https://arxiv.org/abs/2510.11715" style="color: #3498db; font-weight: bold;">[Paper]</a> &nbsp;
