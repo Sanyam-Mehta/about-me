@@ -73,13 +73,20 @@ p {
   margin-top: 8px;
 }
 
-/* News */
-.news {
+/* Keep each link name on one line, e.g. "Google Scholar" */
+.links a {
+  white-space: nowrap;
+}
+
+/* News and the Teaching & Service list */
+.news,
+.list {
   padding-left: 20px;
   margin: 0;
 }
 
-.news li {
+.news li,
+.list li {
   margin-bottom: 4px;
 }
 
@@ -116,7 +123,7 @@ p {
 
 .text {
   flex: 1;
-  min-width: 0;
+  min-width: 0; /* lets long words and links wrap instead of pushing the column wider */
 }
 
 .meta {
@@ -128,16 +135,28 @@ p {
   color: #666666;
 }
 
+/* "More" toggle under each entry (plain HTML details, no JS) */
+details summary {
+  cursor: pointer;
+  color: #1772d0;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+details[open] summary {
+  margin-bottom: 12px;
+}
+
 /* Footer */
 .footer {
   margin-top: 48px;
   font-size: 13px;
-  color: #888888;
+  color: #666666;
   text-align: right;
 }
 
 .footer a {
-  color: #888888;
+  color: #666666;
   text-decoration: underline;
 }
 
@@ -162,19 +181,11 @@ p {
     margin: 0 auto;
   }
 
+  .links {
+    font-size: 15px;
+  }
+
   .footer {
     text-align: center;
   }
-}
-
-/* "More" toggle under each entry (plain HTML details, no JS) */
-details summary {
-  cursor: pointer;
-  color: #1772d0;
-  font-size: 14px;
-  margin-bottom: 8px;
-}
-
-details[open] summary {
-  margin-bottom: 12px;
 }

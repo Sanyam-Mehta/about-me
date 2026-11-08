@@ -32,20 +32,19 @@
         <a href="https://www.bernadettebucher.com/">Bernadette Bucher</a>.
       </p>
       <p>
-        I'm interested in world models for robots: learning actions from video, planning with those learned
-        models, and using video generation models to understand how things move. My goal is to move beyond
-        static datasets and build systems that can perceive, reason, and interact with the dynamic world
-        around them.
+        I'm interested in world models for robots, especially learning actions from video and planning with
+        them. I keep coming back to how much video models already know about how things move, and how a robot
+        could use that to plan and act.
       </p>
       <p>
         Before grad school I spent three years at Gather, where I went from running the data and deployment
         pipeline for our drone fleet to training its perception models.
       </p>
       <p class="links">
-        <a href="mailto:sanyam@umich.edu">Email</a> &nbsp;/&nbsp;
-        <a href="Sanyam_Mehta_CV.pdf">CV</a> &nbsp;/&nbsp;
-        <a href="https://scholar.google.com/citations?user=znD3kXAAAAAJ&amp;hl=en">Google Scholar</a> &nbsp;/&nbsp;
-        <a href="https://github.com/Sanyam-Mehta">GitHub</a> &nbsp;/&nbsp;
+        <a href="mailto:sanyam@umich.edu">Email</a> /
+        <a href="Sanyam_Mehta_CV.pdf">CV</a> /
+        <a href="https://scholar.google.com/citations?user=znD3kXAAAAAJ&amp;hl=en">Google Scholar</a> /
+        <a href="https://github.com/Sanyam-Mehta">GitHub</a> /
         <a href="https://www.linkedin.com/in/sanyam-mehta">LinkedIn</a>
       </p>
     </div>
@@ -59,7 +58,6 @@
   <ul class="news">
     <li><span class="date">Jul 2026</span> Rejoined Gather AI as a Machine Learning Scientist.</li>
     <li><span class="date">May 2026</span> Finished my M.S. in Robotics at the University of Michigan.</li>
-    <li><span class="date">2026</span> Reviewed for ICLR 2027, CoRL 2026 and the CoRL 2026 TAG Workshop.</li>
     <li><span class="date">Jan 2026</span> Point Prompting accepted to ICLR 2026. <!-- TODO confirm month --></li>
     <li><span class="date">Oct 2025</span> Point Prompting released on arXiv.</li>
   </ul>
@@ -70,7 +68,7 @@
   <!-- Publication: Point Prompting -->
   <div class="entry">
     <div class="thumb">
-      <video autoplay muted loop playsinline poster="images/point_prompting.jpg" width="480" height="290">
+      <video autoplay muted loop playsinline poster="images/point_prompting.jpg" width="480" height="290" aria-label="Point Prompting tracking demo">
         <source src="images/point_prompting.mp4" type="video/mp4">
       </video>
     </div>
@@ -87,25 +85,21 @@
         <a href="https://iclr.cc/virtual/2026/poster/10011391">ICLR</a>
       </p>
       <p>
-        Do video diffusion models already know how points move? We put a colored marker on a point in the
-        first frame, had an off-the-shelf model regenerate the video, and followed the marker. Tracking falls
-        out of this with no training, and it is competitive with self-supervised trackers that were
-        trained for the job.
+        Do video diffusion models, which make videos by cleaning up noise step by step, already know how
+        points move? We put a colored marker on a point in the first frame, had an off-the-shelf model
+        regenerate the video, and followed the marker. This gives us tracking with no training.
       </p>
       <details>
         <summary>More</summary>
-      <p>
-        Video diffusion models make videos by starting from noise and cleaning it up step by step.
-        We wanted to know if they already understand how points move. So we put a colored marker on a
-        point in the first frame, had an off-the-shelf model regenerate the video, and followed the marker.
-        We also gave it the unedited video as a negative prompt, an example of what not to produce, which
-        keeps the marker from fading away.
-      </p>
-      <p>
-        Tracking falls out of this with no training at all. It works with different kinds of video models,
-        holds up when the point is hidden for a while, beats earlier trackers that also skip training, and
-        is competitive with self-supervised trackers, which were trained for the job on unlabeled video.
-      </p>
+        <p>
+          We also gave the model the unedited first frame as a negative prompt, an example of what not to
+          produce. That keeps the marker from fading away.
+        </p>
+        <p>
+          The tracking works with different kinds of video models and holds up when the point is hidden for
+          a while. It beats earlier trackers that also skip training, and is competitive with self-supervised
+          trackers, which were trained for the job on unlabeled video.
+        </p>
       </details>
       <p class="note">* equal contribution</p>
     </div>
@@ -129,27 +123,22 @@
       </p>
       <p>
         Robot action labels are scarce, but video is plentiful. JEVA learns a world model, a model that
-        predicts what happens next, with actions learned from mostly unlabeled video. With 5% of episodes
-        labeled, its policy matches or beats baselines trained with 20%.
+        predicts what happens next, and learns its actions from video instead of being given them. With 5% of
+        episodes labeled, the policy it learns (the part that picks actions) matches or beats baselines
+        trained with 20% on the OGBench cube-stacking tasks.
       </p>
       <details>
         <summary>More</summary>
-      <p>
-        Robots need action labels to learn from video, and those labels are scarce. Video itself is
-        everywhere. JEVA learns a world model, a model that predicts what happens next, whose actions are
-        latent. That means the actions are learned from video instead of given.
-      </p>
-      <p>
-        It has two parts. An inverse dynamics model guesses the action that happened between two frames,
-        and a forward model predicts the next state. JEVA trains both together in one stage, from mostly
-        unlabeled video plus a few labeled episodes. With only 5% of episodes labeled, the policy it learns,
-        the part that picks the robot's actions, matches or beats baselines trained with 20%.
-      </p>
-      <p>
-        I tested a discrete codebook for the latent actions, a fixed set of action codes to pick from, and
-        continuous latents worked better. I also helped compare two planners, MPPI and CEM, in the learned
-        latent space. CEM won consistently, and that started the project below.
-      </p>
+        <p>
+          These learned actions are called latent actions. JEVA has two parts. An inverse dynamics model
+          guesses the action that happened between two frames, and a forward model predicts the next state.
+          JEVA trains both together in one stage, from mostly unlabeled video plus a few labeled episodes.
+        </p>
+        <p>
+          I tested a discrete codebook for the latent actions, a fixed set of action codes to pick from, and
+          continuous latents worked better. I also helped compare two planners, MPPI and CEM, in the learned
+          latent space. CEM won consistently, and that started the project below.
+        </p>
       </details>
     </div>
   </div>
@@ -161,42 +150,40 @@
   <div class="entry">
     <div class="thumb">
       <img src="images/planner_2x2.png" alt="Bar chart of Push-T success. Noise shrinks: CEM-style mean 88%, MPPI-style mean 84%. Noise fixed: CEM-style mean 70%, MPPI-style mean 66%." width="600" height="528" loading="lazy">
-      <p class="caption">Push-T success (%), 3 seeds &times; 100 episodes.</p>
+      <p class="caption">Push-T success (%), 3 seeds &times; 100 episodes. MPPI at T = 15.</p>
     </div>
     <div class="text">
       <h3>Planning in latent-action world models</h3>
       <p class="meta">Independent project, Oct 2026 to present</p>
       <p>
-        In JEVA, CEM kept beating MPPI, two common sampling planners. I wanted to know if that meant the
-        learned action space was badly behaved. A 2&times;2 experiment showed most of the gap came from how
-        each planner handles its sampling noise, not from the space itself. Next I'm testing the original
-        idea directly.
+        CEM and MPPI are two common sampling planners. In JEVA, CEM kept beating MPPI, and I wanted to know
+        if that meant the learned action space was badly behaved, so that averaging good actions gives a bad
+        one. On LeWM, a public model, a 2&times;2 experiment showed most of the gap came from how each planner
+        handles its sampling noise, not from the space itself. Next I'm testing the original idea directly.
       </p>
       <details>
         <summary>More</summary>
-      <p>
-        CEM and MPPI are both sampling planners. Each round they try a few hundred candidate action
-        sequences in the world model, then move toward the good ones. CEM averages its best few and shrinks
-        its sampling noise as it goes. MPPI takes a score-weighted average of many and keeps its noise fixed.
-      </p>
-      <p>
-        In JEVA, CEM kept beating MPPI. I saw the same thing on LeWM, a public latent-action world model,
-        on Push-T, a task where the robot pushes a T-shaped block to a goal position and angle. With the same compute,
-        CEM led by 23 points. My question was whether this meant the learned action space is badly behaved,
-        so that averaging good actions lands somewhere the model doesn't understand.
-      </p>
-      <p>
-        The two planners differ in two ways at once, so I swapped each difference on its own in a 2&times;2
-        experiment. Giving MPPI CEM's shrinking noise took it from 66% to 84%. Most of the gap came from the
-        noise schedule, not the latent space, so the gap no longer counts as evidence that the space is
-        irregular. I then ran follow-up runs with my predictions written down beforehand. One of them
-        narrowly failed.
-      </p>
-      <p>
-        Next I want to test the original idea directly. I'll take CEM's best action samples, run each one,
-        then run their average, and see whether the averages do systematically worse. If they don't, I'll
-        write it up as a negative result.
-      </p>
+        <p>
+          Each round, both planners try a few hundred candidate action sequences in the world model, then
+          move toward the good ones. CEM averages its best few and shrinks its sampling noise as it goes.
+          MPPI takes a score-weighted average of many and keeps its noise fixed.
+        </p>
+        <p>
+          With LeWM on Push-T, a task where the robot pushes a T-shaped block to a goal position and angle,
+          CEM led by over 20 points with the same compute. The two planners differ in two ways at once, so I
+          swapped each difference on its own. Letting MPPI shrink its noise as it goes took it from 66% to
+          84%. So the gap no longer counts as evidence that the space is irregular.
+        </p>
+        <p>
+          I then ran follow-up runs with my predictions written down beforehand. I predicted that MPPI's
+          weighting with CEM's noise rule would reach at least 84%. It reached 82%, so I'm not reading
+          anything into the weighting yet.
+        </p>
+        <p>
+          For the direct test, I'll take CEM's best action samples, run each one, then run their average, and
+          see whether the averages do systematically worse. If they don't, I'll write it up as a negative
+          result.
+        </p>
       </details>
     </div>
   </div>
@@ -210,33 +197,31 @@
       <h3>Robot-agnostic navigation from video models</h3>
       <p class="meta">University of Michigan, Jul 2025 to Jan 2026, advised by <a href="https://www.bernadettebucher.com/">Bernadette Bucher</a></p>
       <p>
-        Can a robot follow a language instruction by letting a video model imagine the walk, then working out
-        how the camera moved in those imagined frames? That turns navigation into something any robot can
-        follow. I built the first stage, which picks the view facing the goal. On unseen scenes it was within
-        15&deg; of the right direction 76% of the time, against 12.5% by chance.
+        Can a robot follow a language instruction, like "go past the kitchen and stop at the stairs," by
+        having a video model imagine the walk? I built the first stage, which picks the view facing the
+        goal. On scenes it had never seen, it was within 15&deg; of the right direction 76% of the time,
+        against 12.5% by chance.
       </p>
       <details>
         <summary>More</summary>
-      <p>
-        The goal was a robot that follows a language instruction, like "go past the kitchen and stop at
-        the stairs." I started with a diffusion policy, a model that generates actions by cleaning up noise
-        step by step. It predicted waypoints from the instruction and the current view of a semantic map,
-        a map labeled with what is where. Its real flaw was that it only saw the present. It had no memory
-        of where it had been, and following an instruction depends on that history.
-      </p>
-      <p>
-        Video models condition on past frames and text by construction, and that led to a new plan. Pick
-        the camera view that faces the goal. Have a video generation model imagine the walk from that view
-        and the instruction. Then recover the camera motion by matching frames. Navigation turns into pose
-        estimation, working out how the camera moved, and any robot can follow that. It also gets better as
-        video models get better, and it ties back to Point Prompting.
-      </p>
-      <p>
-        I built the first stage. It looks at 24 views around the robot, 15&deg; apart, and picks the one
-        leading toward the goal. I trained it on about 10.7K episodes I collected myself in the Habitat
-        simulator. On scenes it had never seen, it was within 15&deg; of the right direction 76% of the
-        time, against 12.5% by chance. I finished my degree before building the later stages.
-      </p>
+        <p>
+          I started with a diffusion policy, a model that generates actions by cleaning up noise step by
+          step. It predicted waypoints from the instruction and the current view of a feature map of the
+          scene that stores what each spot looks like. Its real flaw was that it only saw the present. It had
+          no memory of where it had been, and following an instruction depends on that history.
+        </p>
+        <p>
+          Video models already use past frames and text, so I changed plans. Pick the camera view that faces
+          the goal. Generate a video from that view and the instruction. Then recover the camera motion by
+          matching frames. Navigation turns into pose estimation, working out how the camera moved, and any
+          robot can follow that. It also gets better as video models get better. It's the same idea as Point
+          Prompting, reading motion out of what a video model generates.
+        </p>
+        <p>
+          The first stage looks at 24 views around the robot, 15&deg; apart. I trained it on about 10.7K
+          episodes I collected myself in the Habitat simulator. I finished my degree before building the
+          later stages.
+        </p>
       </details>
     </div>
   </div>
@@ -246,19 +231,18 @@
   <h3><a href="https://www.gather.ai/">Gather AI</a>, Pittsburgh</h3>
   <p class="meta">ML-Ops Engineer and ML Engineer, 2021 to 2024. Machine Learning Scientist, 2026 to present.</p>
   <p>
-    Gather AI builds autonomous drones that collect inventory data from dangerous heights in warehouses,
-    keeping people safely on the ground. I joined in 2021 to run the data engine and model deployment for
-    the drone fleet, then trained its perception models, mentored by
-    <a href="https://scholar.google.com/citations?user=JcZUd5IAAAAJ&amp;hl=en">Daniel Maturana</a>.
+    Our drones scan warehouse racks at heights where it's dangerous for people to work. I joined in 2021 to
+    run the data engine and model deployment for the drone fleet, then trained its perception models,
+    mentored by <a href="https://scholar.google.com/citations?user=JcZUd5IAAAAJ&amp;hl=en">Daniel Maturana</a>.
     Since rejoining in 2026 I've worked on recovering the 3D geometry of pallet stacks from drone images to
-    count boxes, kept geometric on purpose so every failure traces back to one stage that can be fixed on
-    its own. I also built tracing for a forklift-mounted camera pipeline, so the team can see where a
-    barcode detection gets lost and test changes offline by replaying logs.
+    count boxes. I kept it geometric on purpose, so when it fails we can find and fix the stage that broke.
+    I also built tracing for a forklift-mounted camera pipeline, so the team can see where a barcode
+    detection gets lost and test changes offline by replaying logs.
   </p>
 
   <!-- Teaching & Service -->
   <h2>Teaching &amp; Service</h2>
-  <ul class="news">
+  <ul class="list">
     <li>
       Graduate Student Instructor, ROB 550 Robotic Systems Lab, University of Michigan, Jan 2025 to May 2026.
       I taught particle-filter SLAM and how to program a robot arm from scratch.
