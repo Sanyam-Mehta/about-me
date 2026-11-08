@@ -1,14 +1,10 @@
-# updated website
+# Sanyam Mehta's website
 
-This repo is built on a fork of **Jekyll Now** from [this repository](https://github.com/barryclark/jekyll-now). **Jekyll** is a static site generator that's perfect for GitHub hosted blogs ([Jekyll Repository](https://github.com/jekyll/jekyll))
+Live at https://sanyam-mehta.github.io/about-me/
 
-The website design is just a modification of [Jon Barron's website](https://jonbarron.info/) and is converted for my own use, re-purposing my old markdown posts. **Feel free to use template for your own purposes**, but please respect copyright for all the images/content in my `images`, `pdfs`, `_posts` folders. 
-
-
-
-## issues
-* In general, jekyll will try to build a full page for every post. I skip that by forcing `permalink: /`. This creates multiple entries in sitemap.xml for index.html but is otherwise fine. 
-* If you want multiple paragraphs, consider using `excerpt_separator: <!--more-->` in `_config.yml`, for my own use I didn't need this. 
-* My own posts have lots of extra stuff left over from my old jekyll design ("author", long descriptions, etc.), feel free to ignore them
-* I use thumbnails, so I can upload arbitrary sized images but then only display small ones. The `_make_thumbnails.sh` script generates them and the html template looks in `tn/` for all images. 
-* I have three categories of post with slightly differerent formatting, so changing sizing requires edits in multiple paces. 
+- Everything on the page is in `index.html`. Each section starts with a comment like `<!-- News -->`.
+- Styling is in `style.css`.
+- To add a picture, put it in `images/` (keep it small, around 600px wide) and point an `<img>` at it.
+- To update the CV, replace `Sanyam_Mehta_CV.pdf`.
+- Push to the `development` branch and GitHub Pages updates the site in a minute or two.
+- `.nojekyll` tells GitHub Pages to serve the files as they are, with no build step.

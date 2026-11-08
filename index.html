@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sanyam Mehta</title>
+  <meta name="description" content="Sanyam Mehta is a machine learning scientist in Pittsburgh who works on world models, video models and 3D perception for robots.">
+  <link rel="canonical" href="https://sanyam-mehta.github.io/about-me/">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://sanyam-mehta.github.io/about-me/">
+  <meta property="og:title" content="Sanyam Mehta">
+  <meta property="og:description" content="Sanyam Mehta is a machine learning scientist in Pittsburgh who works on world models, video models and 3D perception for robots.">
+  <meta property="og:image" content="https://sanyam-mehta.github.io/about-me/images/profile.jpg">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="page">
+
+  <!-- Header: name, bio, photo, links -->
+  <div class="header">
+    <div class="bio">
+      <h1>Sanyam Mehta</h1>
+      <p>
+        I'm a Machine Learning Scientist at <a href="https://www.gather.ai/">Gather AI</a> in Pittsburgh,
+        where we build drones that scan warehouse inventory. Before that I did my M.S. in Robotics at the
+        <a href="https://robotics.umich.edu/">University of Michigan</a>, working with
+        Andrew Owens<!-- TODO add link once verified, likely https://andrewowens.com/ --> and
+        <a href="https://www.bernadettebucher.com/">Bernadette Bucher</a>.
+      </p>
+      <p>
+        I'm interested in world models for robots: learning actions from video, planning with those learned
+        models, and using video generation models to understand how things move. My goal is to move beyond
+        static datasets and build systems that can perceive, reason, and interact with the dynamic world
+        around them.
+      </p>
+      <p>
+        Before grad school I spent three years at Gather, where I went from running the data and deployment
+        pipeline for our drone fleet to training its perception models.
+      </p>
+      <p class="links">
+        <a href="mailto:sanyam@umich.edu">Email</a> &nbsp;/&nbsp;
+        <a href="Sanyam_Mehta_CV.pdf">CV</a> &nbsp;/&nbsp;
+        <a href="https://scholar.google.com/citations?user=znD3kXAAAAAJ&amp;hl=en">Google Scholar</a> &nbsp;/&nbsp;
+        <a href="https://github.com/Sanyam-Mehta">GitHub</a> &nbsp;/&nbsp;
+        <a href="https://www.linkedin.com/in/sanyam-mehta">LinkedIn</a>
+      </p>
+    </div>
+    <div class="photo">
+      <img src="images/profile.jpg" alt="Photo of Sanyam Mehta" width="500" height="500">
+    </div>
+  </div>
+
+  <!-- News -->
+  <h2>News</h2>
+  <ul class="news">
+    <li><span class="date">Jul 2026</span> Rejoined Gather AI as a Machine Learning Scientist.</li>
+    <li><span class="date">May 2026</span> Finished my M.S. in Robotics at the University of Michigan.</li>
+    <li><span class="date">2026</span> Reviewed for ICLR 2027, CoRL 2026 and the CoRL 2026 TAG Workshop.</li>
+    <li><span class="date">Jan 2026</span> Point Prompting accepted to ICLR 2026. <!-- TODO confirm month --></li>
+    <li><span class="date">Oct 2025</span> Point Prompting released on arXiv.</li>
+  </ul>
+
+  <!-- Publications -->
+  <h2>Publications</h2>
+
+  <!-- Publication: Point Prompting -->
+  <div class="entry">
+    <div class="thumb">
+      <video autoplay muted loop playsinline poster="images/point_prompting.jpg" width="480" height="290">
+        <source src="images/point_prompting.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="text">
+      <h3><a href="https://point-prompting.github.io/">Point Prompting: Counterfactual Tracking with Video Diffusion Models</a></h3>
+      <p class="meta">
+        <strong>Sanyam Mehta</strong>*,
+        <a href="https://www.ayshrv.com">Ayush Shrivastava</a>*,
+        Daniel Geng<!-- TODO add link once verified, likely https://dangeng.github.io -->,
+        Andrew Owens<br>
+        <em>ICLR 2026</em><br>
+        <a href="https://point-prompting.github.io/">project page</a> /
+        <a href="https://arxiv.org/abs/2510.11715">arXiv</a> /
+        <a href="https://iclr.cc/virtual/2026/poster/10011391">ICLR</a>
+      </p>
+      <p>
+        Video diffusion models make videos by starting from noise and cleaning it up step by step.
+        We wanted to know if they already understand how points move. So we put a colored marker on a
+        point in the first frame, had an off-the-shelf model regenerate the video, and followed the marker.
+        We also gave it the unedited video as a negative prompt, an example of what not to produce, which
+        keeps the marker from fading away.
+      </p>
+      <p>
+        Tracking falls out of this with no training at all. It works with different kinds of video models,
+        holds up when the point is hidden for a while, beats earlier trackers that also skip training, and
+        is competitive with self-supervised trackers, which were trained for the job on unlabeled video.
+      </p>
+      <p class="note">* equal contribution</p>
+    </div>
+  </div>
+
+  <!-- Publication: JEVA -->
+  <div class="entry">
+    <div class="thumb">
+      <img src="images/jeva_overview.png" alt="Overview of the JEVA method" width="600" height="212" loading="lazy">
+    </div>
+    <div class="text">
+      <h3><a href="https://singhularadi.github.io/jeva/">JEVA: Joint Encoders for Variational Action World Models</a></h3>
+      <p class="meta">
+        <a href="https://singhularadi.github.io">Aditya Singh</a>,
+        <strong>Sanyam Mehta</strong>,
+        Yixin Wang,
+        Nima Fazeli,
+        <a href="https://www.bernadettebucher.com/">Bernadette Bucher</a><br>
+        <em>Under review, 2026</em><br>
+        <a href="https://singhularadi.github.io/jeva/">project page</a>
+      </p>
+      <p>
+        Robots need action labels to learn from video, and those labels are scarce. Video itself is
+        everywhere. JEVA learns a world model, a model that predicts what happens next, whose actions are
+        latent. That means the actions are learned from video instead of given.
+      </p>
+      <p>
+        It has two parts. An inverse dynamics model guesses the action that happened between two frames,
+        and a forward model predicts the next state. JEVA trains both together in one stage, from mostly
+        unlabeled video plus a few labeled episodes. With only 5% of episodes labeled, the policy it learns,
+        the part that picks the robot's actions, matches or beats baselines trained with 20%.
+      </p>
+      <p>
+        I tested a discrete codebook for the latent actions, a fixed set of action codes to pick from, and
+        continuous latents worked better. I also helped compare two planners, MPPI and CEM, in the learned
+        latent space. CEM won consistently, and that started the project below.
+      </p>
+    </div>
+  </div>
+
+  <!-- Research: projects without a paper yet -->
+  <h2>Research</h2>
+
+  <!-- Research: planning in latent-action world models -->
+  <div class="entry">
+    <div class="thumb">
+      <img src="images/planner_2x2.png" alt="Bar chart of Push-T success. Noise shrinks: CEM-style mean 88%, MPPI-style mean 84%. Noise fixed: CEM-style mean 70%, MPPI-style mean 66%." width="600" height="528" loading="lazy">
+      <p class="caption">Push-T success (%), 3 seeds &times; 100 episodes.</p>
+    </div>
+    <div class="text">
+      <h3>Planning in latent-action world models</h3>
+      <p class="meta">Independent project, Oct 2026 to present</p>
+      <p>
+        CEM and MPPI are both sampling planners. Each round they try a few hundred candidate action
+        sequences in the world model, then move toward the good ones. CEM averages its best few and shrinks
+        its sampling noise as it goes. MPPI takes a score-weighted average of many and keeps its noise fixed.
+      </p>
+      <p>
+        In JEVA, CEM kept beating MPPI. I saw the same thing on LeWM, a public latent-action world model,
+        on Push-T, a task where the robot pushes a T-shaped block to a goal position and angle. With the same compute,
+        CEM led by 23 points. My question was whether this meant the learned action space is badly behaved,
+        so that averaging good actions lands somewhere the model doesn't understand.
+      </p>
+      <p>
+        The two planners differ in two ways at once, so I swapped each difference on its own in a 2&times;2
+        experiment. Giving MPPI CEM's shrinking noise took it from 66% to 84%. Most of the gap came from the
+        noise schedule, not the latent space, so the gap no longer counts as evidence that the space is
+        irregular. I then ran follow-up runs with my predictions written down beforehand. One of them
+        narrowly failed.
+      </p>
+      <p>
+        Next I want to test the original idea directly. I'll take CEM's best action samples, run each one,
+        then run their average, and see whether the averages do systematically worse. If they don't, I'll
+        write it up as a negative result.
+      </p>
+    </div>
+  </div>
+
+  <!-- Research: navigation from video models -->
+  <div class="entry">
+    <div class="thumb">
+      <img src="images/nav_views.png" alt="A robot seen from above with 24 view directions around it, one pointing toward the goal, and an arrow to frames of an imagined walk" width="600" height="400" loading="lazy">
+    </div>
+    <div class="text">
+      <h3>Robot-agnostic navigation from video models</h3>
+      <p class="meta">University of Michigan, Jul 2025 to Jan 2026, advised by <a href="https://www.bernadettebucher.com/">Bernadette Bucher</a></p>
+      <p>
+        The goal was a robot that follows a language instruction, like "go past the kitchen and stop at
+        the stairs." I started with a diffusion policy, a model that generates actions by cleaning up noise
+        step by step. It predicted waypoints from the instruction and the current view of a semantic map,
+        a map labeled with what is where. Its real flaw was that it only saw the present. It had no memory
+        of where it had been, and following an instruction depends on that history.
+      </p>
+      <p>
+        Video models condition on past frames and text by construction, and that led to a new plan. Pick
+        the camera view that faces the goal. Have a video generation model imagine the walk from that view
+        and the instruction. Then recover the camera motion by matching frames. Navigation turns into pose
+        estimation, working out how the camera moved, and any robot can follow that. It also gets better as
+        video models get better, and it ties back to Point Prompting.
+      </p>
+      <p>
+        I built the first stage. It looks at 24 views around the robot, 15&deg; apart, and picks the one
+        leading toward the goal. I trained it on about 10.7K episodes I collected myself in the Habitat
+        simulator. On scenes it had never seen, it was within 15&deg; of the right direction 76% of the
+        time, against 12.5% by chance. I finished my degree before building the later stages.
+      </p>
+    </div>
+  </div>
+
+  <!-- Industry -->
+  <h2>Industry</h2>
+  <h3><a href="https://www.gather.ai/">Gather AI</a>, Pittsburgh</h3>
+  <p class="meta">ML-Ops Engineer and ML Engineer, 2021 to 2024. Machine Learning Scientist, 2026 to present.</p>
+  <p>
+    Gather AI builds autonomous drones that scan warehouse racks. The drones collect inventory data from
+    dangerous heights, so people can stay safely on the ground.
+  </p>
+  <p>
+    I joined in 2021 to run the data engine and model deployment for the drone fleet, and later trained its
+    perception models, mentored by
+    <a href="https://scholar.google.com/citations?user=JcZUd5IAAAAJ&amp;hl=en">Daniel Maturana</a>.
+    That work included inferring the 3D occupancy of rack locations from 2D images, meaning which parts of
+    each location are filled. I also compared visual SLAM systems for flying in warehouses. SLAM builds a
+    map and tracks the drone's position in it at the same time, here using only camera images.
+  </p>
+  <p>
+    Since rejoining in 2026 I've worked on 3D perception. I recover the 3D geometry of pallet stacks from
+    drone images so we can count the boxes. I keep it geometric on purpose, so every failure traces back to
+    one stage that can be fixed on its own. I also built tracing for a camera pipeline mounted on
+    forklifts. It lets the team see where a barcode detection gets lost, and test changes offline by
+    replaying logs.
+  </p>
+
+  <!-- Teaching & Service -->
+  <h2>Teaching &amp; Service</h2>
+  <ul class="news">
+    <li>
+      Graduate Student Instructor, ROB 550 Robotic Systems Lab, University of Michigan, Jan 2025 to May 2026.
+      I taught particle-filter SLAM and how to program a robot arm from scratch.
+    </li>
+    <li>Reviewer for ICLR 2027, CoRL 2026 and the CoRL 2026 TAG Workshop.</li>
+  </ul>
+
+  <!-- Footer -->
+  <p class="footer">
+    Design adapted from <a href="https://github.com/jonbarron/jonbarron_website">Jon Barron's website</a>.
+    Last updated November 2026.
+  </p>
+
+</div>
+</body>
+</html>
