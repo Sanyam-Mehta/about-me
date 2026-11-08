@@ -166,3 +166,15 @@ p {
     text-align: center;
   }
 }
+
+/* "More" toggle under each entry (plain HTML details, no JS) */
+details summary {
+  cursor: pointer;
+  color: #1772d0;
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+details[open] summary {
+  margin-bottom: 12px;
+}

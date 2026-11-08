@@ -28,7 +28,7 @@
         I'm a Machine Learning Scientist at <a href="https://www.gather.ai/">Gather AI</a> in Pittsburgh,
         where we build drones that scan warehouse inventory. Before that I did my M.S. in Robotics at the
         <a href="https://robotics.umich.edu/">University of Michigan</a>, working with
-        Andrew Owens<!-- TODO add link once verified, likely https://andrewowens.com/ --> and
+        <a href="https://www.cs.cornell.edu/people/andrew-owens">Andrew Owens</a> and
         <a href="https://www.bernadettebucher.com/">Bernadette Bucher</a>.
       </p>
       <p>
@@ -79,13 +79,21 @@
       <p class="meta">
         <strong>Sanyam Mehta</strong>*,
         <a href="https://www.ayshrv.com">Ayush Shrivastava</a>*,
-        Daniel Geng<!-- TODO add link once verified, likely https://dangeng.github.io -->,
-        Andrew Owens<br>
+        <a href="https://dangeng.github.io/">Daniel Geng</a>,
+        <a href="https://www.cs.cornell.edu/people/andrew-owens">Andrew Owens</a><br>
         <em>ICLR 2026</em><br>
         <a href="https://point-prompting.github.io/">project page</a> /
         <a href="https://arxiv.org/abs/2510.11715">arXiv</a> /
         <a href="https://iclr.cc/virtual/2026/poster/10011391">ICLR</a>
       </p>
+      <p>
+        Do video diffusion models already know how points move? We put a colored marker on a point in the
+        first frame, had an off-the-shelf model regenerate the video, and followed the marker. Tracking falls
+        out of this with no training, and it is competitive with self-supervised trackers that were
+        trained for the job.
+      </p>
+      <details>
+        <summary>More</summary>
       <p>
         Video diffusion models make videos by starting from noise and cleaning it up step by step.
         We wanted to know if they already understand how points move. So we put a colored marker on a
@@ -98,6 +106,7 @@
         holds up when the point is hidden for a while, beats earlier trackers that also skip training, and
         is competitive with self-supervised trackers, which were trained for the job on unlabeled video.
       </p>
+      </details>
       <p class="note">* equal contribution</p>
     </div>
   </div>
@@ -119,6 +128,13 @@
         <a href="https://singhularadi.github.io/jeva/">project page</a>
       </p>
       <p>
+        Robot action labels are scarce, but video is plentiful. JEVA learns a world model, a model that
+        predicts what happens next, with actions learned from mostly unlabeled video. With 5% of episodes
+        labeled, its policy matches or beats baselines trained with 20%.
+      </p>
+      <details>
+        <summary>More</summary>
+      <p>
         Robots need action labels to learn from video, and those labels are scarce. Video itself is
         everywhere. JEVA learns a world model, a model that predicts what happens next, whose actions are
         latent. That means the actions are learned from video instead of given.
@@ -134,6 +150,7 @@
         continuous latents worked better. I also helped compare two planners, MPPI and CEM, in the learned
         latent space. CEM won consistently, and that started the project below.
       </p>
+      </details>
     </div>
   </div>
 
@@ -149,6 +166,14 @@
     <div class="text">
       <h3>Planning in latent-action world models</h3>
       <p class="meta">Independent project, Oct 2026 to present</p>
+      <p>
+        In JEVA, CEM kept beating MPPI, two common sampling planners. I wanted to know if that meant the
+        learned action space was badly behaved. A 2&times;2 experiment showed most of the gap came from how
+        each planner handles its sampling noise, not from the space itself. Next I'm testing the original
+        idea directly.
+      </p>
+      <details>
+        <summary>More</summary>
       <p>
         CEM and MPPI are both sampling planners. Each round they try a few hundred candidate action
         sequences in the world model, then move toward the good ones. CEM averages its best few and shrinks
@@ -172,6 +197,7 @@
         then run their average, and see whether the averages do systematically worse. If they don't, I'll
         write it up as a negative result.
       </p>
+      </details>
     </div>
   </div>
 
@@ -183,6 +209,14 @@
     <div class="text">
       <h3>Robot-agnostic navigation from video models</h3>
       <p class="meta">University of Michigan, Jul 2025 to Jan 2026, advised by <a href="https://www.bernadettebucher.com/">Bernadette Bucher</a></p>
+      <p>
+        Can a robot follow a language instruction by letting a video model imagine the walk, then working out
+        how the camera moved in those imagined frames? That turns navigation into something any robot can
+        follow. I built the first stage, which picks the view facing the goal. On unseen scenes it was within
+        15&deg; of the right direction 76% of the time, against 12.5% by chance.
+      </p>
+      <details>
+        <summary>More</summary>
       <p>
         The goal was a robot that follows a language instruction, like "go past the kitchen and stop at
         the stairs." I started with a diffusion policy, a model that generates actions by cleaning up noise
@@ -203,6 +237,7 @@
         simulator. On scenes it had never seen, it was within 15&deg; of the right direction 76% of the
         time, against 12.5% by chance. I finished my degree before building the later stages.
       </p>
+      </details>
     </div>
   </div>
 
@@ -211,23 +246,14 @@
   <h3><a href="https://www.gather.ai/">Gather AI</a>, Pittsburgh</h3>
   <p class="meta">ML-Ops Engineer and ML Engineer, 2021 to 2024. Machine Learning Scientist, 2026 to present.</p>
   <p>
-    Gather AI builds autonomous drones that scan warehouse racks. The drones collect inventory data from
-    dangerous heights, so people can stay safely on the ground.
-  </p>
-  <p>
-    I joined in 2021 to run the data engine and model deployment for the drone fleet, and later trained its
-    perception models, mentored by
+    Gather AI builds autonomous drones that collect inventory data from dangerous heights in warehouses,
+    keeping people safely on the ground. I joined in 2021 to run the data engine and model deployment for
+    the drone fleet, then trained its perception models, mentored by
     <a href="https://scholar.google.com/citations?user=JcZUd5IAAAAJ&amp;hl=en">Daniel Maturana</a>.
-    That work included inferring the 3D occupancy of rack locations from 2D images, meaning which parts of
-    each location are filled. I also compared visual SLAM systems for flying in warehouses. SLAM builds a
-    map and tracks the drone's position in it at the same time, here using only camera images.
-  </p>
-  <p>
-    Since rejoining in 2026 I've worked on 3D perception. I recover the 3D geometry of pallet stacks from
-    drone images so we can count the boxes. I keep it geometric on purpose, so every failure traces back to
-    one stage that can be fixed on its own. I also built tracing for a camera pipeline mounted on
-    forklifts. It lets the team see where a barcode detection gets lost, and test changes offline by
-    replaying logs.
+    Since rejoining in 2026 I've worked on recovering the 3D geometry of pallet stacks from drone images to
+    count boxes, kept geometric on purpose so every failure traces back to one stage that can be fixed on
+    its own. I also built tracing for a forklift-mounted camera pipeline, so the team can see where a
+    barcode detection gets lost and test changes offline by replaying logs.
   </p>
 
   <!-- Teaching & Service -->
